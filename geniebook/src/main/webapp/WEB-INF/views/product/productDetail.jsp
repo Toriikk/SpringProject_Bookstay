@@ -218,6 +218,16 @@ function deleteReview(){
 							<c:when test="${rating > 2   && rating < 3 }">
 								<img src="<c:url value="/resources/images/product-details/2.5_star.png"/>"/>
 							</c:when>
+							</c:when>
+							<c:when test="${rating == 2 }">
+								<img src="<c:url value="/resources/images/product-details/2_star.png"/>"/>
+							</c:when>
+							<c:when test="${rating > 1   && rating < 2 }">
+								<img src="<c:url value="/resources/images/product-details/1.5_star.png"/>"/>
+							</c:when>
+							<c:when test="${rating == 1  }">
+								<img src="<c:url value="/resources/images/product-details/1_star.png"/>"/>
+							</c:when>
 							<c:otherwise>
 								<img src="<c:url value="/resources/images/product-details/0_star.png"/>"/>
 							</c:otherwise> 
