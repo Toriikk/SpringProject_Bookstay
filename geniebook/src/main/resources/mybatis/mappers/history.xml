@@ -22,8 +22,6 @@
 		<result property="addr_road" column="addr_road" />
 		<result property="addr_detail" column="addr_detail" />
 		<result property="purchase_date" column="purchase_date" />
-		<result property="point" column="point" />
-		
 
 		
 	</resultMap>	
@@ -34,7 +32,7 @@
     					addr_road, addr_detail, purchase_date, point)
     					values(#{id}, #{name}, #{cartId}, #{email}, #{content}, #{phoneNum}, #{bookNo}, #{price},
     						#{quantity}, #{grandTotal}, #{addr_num}, #{addr_road}, 
-    						#{addr_detail}, sysdate, #{point})
+    						#{addr_detail}, sysdate(), #{point})
                                   
    ]]>      
   </insert>

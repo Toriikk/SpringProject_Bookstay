@@ -24,10 +24,10 @@
 		insert into review(
 			reviewId, memberId, reviewDate, content, bookNo, rating)
 			values(
-			seq_review_reviewId.nextval, #{memberId}, sysdate, #{content}, #{bookNo}, #{rating})
+			(select * from ((select max(reviewId) +1 from review) next), #{memberId}, sysdate, #{content}, #{bookNo}, #{rating})
 		  ]]>
 	</insert>
-
+	
 	
 	<update id="updateReview" parameterType="reviewVO">
 		<![CDATA[
@@ -45,7 +45,6 @@
 		where reviewId = #{reviewId}
 		  ]]>
 	</delete>
-	
 	<!-- 책번호로 평균 평점 조회 (평점이 널이면 0) -->
 	<select id="selectRatingBybookNo" resultType="float" parameterType="integer">
 	 <![CDATA[

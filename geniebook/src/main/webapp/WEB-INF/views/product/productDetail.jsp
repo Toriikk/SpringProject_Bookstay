@@ -218,7 +218,6 @@ function deleteReview(){
 							<c:when test="${rating > 2   && rating < 3 }">
 								<img src="<c:url value="/resources/images/product-details/2.5_star.png"/>"/>
 							</c:when>
-							</c:when>
 							<c:when test="${rating == 2 }">
 								<img src="<c:url value="/resources/images/product-details/2_star.png"/>"/>
 							</c:when>

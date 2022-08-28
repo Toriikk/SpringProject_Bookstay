@@ -23,19 +23,19 @@
 
 	<select id="selectAllCommonList" resultMap="commonsResult">
     <![CDATA[
-     SELECT rnum, T.*
-   FROM ( SELECT commonId, memberId, boardDate, title, content, viewCnt, imageFileName, ROW_NUMBER() OVER(ORDER BY originNo desc, groupLayer asc) as rnum
+     SELECT 'rnum', T.*
+   FROM ( SELECT commonId, memberId, boardDate, title, content, viewCnt, imageFileName, ROW_NUMBER() OVER(ORDER BY originNo desc, groupLayer asc) as 'rnum'
                    FROM common) T
-  WHERE rnum BETWEEN #{startList} AND #{endList}
+  WHERE 'rnum' BETWEEN #{startList} AND #{endList}
     ]]>
 	</select>
 	
 	<select id="selectAllCommonListById" resultMap="commonsResult" parameterType="map">
     <![CDATA[
-     SELECT rnum, T.*
-   FROM ( SELECT commonId, memberId, boardDate, title, content, viewCnt, imageFileName, ROW_NUMBER() OVER(ORDER BY originNo desc, groupLayer asc) as rnum
+     SELECT 'rnum', T.*
+   FROM ( SELECT commonId, memberId, boardDate, title, content, viewCnt, imageFileName, ROW_NUMBER() OVER(ORDER BY originNo desc, groupLayer asc) as 'rnum'
                    FROM common) T
-  WHERE memberId = #{id} and rnum BETWEEN #{pagination.startList} AND #{pagination.endList}
+  WHERE memberId = #{id} and 'rnum' BETWEEN #{pagination.startList} AND #{pagination.endList}
     ]]>
 	</select>
 
@@ -44,25 +44,24 @@
 	<insert id="addCommon" parameterType="commonVO">
 	<![CDATA[
 			insert into common(commonId,  memberId, title, content, imageFileName, originNo, groupOrd, groupLayer)
-			values(seq_common_commonId.nextval, #{memberId}, #{title}, #{content}, #{imageFileName,jdbcType=VARCHAR}, seq_common_commonId.nextval, #{groupOrd}, #{groupLayer})
+			values((select *from (select max(commonId)+1 from common) next), #{memberId}, #{title}, #{content}, #{imageFileName,jdbcType=VARCHAR}, (select *from (select max(commonId)+1 from common) next), #{groupOrd}, #{groupLayer})
 			]]>
 	</insert>
 
 	<insert id="replyCommon" parameterType="commonVO">
 	<![CDATA[
 			insert into common(commonId,  memberId, title, content, imageFileName, originNo, groupOrd, groupLayer)
-			values(seq_common_commonId.nextval, #{memberId}, #{title}, #{content}, #{imageFileName,jdbcType=VARCHAR}, #{originNo}, #{groupOrd}, #{groupLayer})
+			values((select *from (select max(commonId)+1 from common) next), #{memberId}, #{title}, #{content}, #{imageFileName,jdbcType=VARCHAR}, #{originNo}, #{groupOrd}, #{groupLayer})
 			]]>
 	</insert>
 
 	<update id="updateCommon" parameterType="commonVO">
 	<![CDATA[
 		update common set
-            content = #{content}
-            , boardDate = sysdate
-            , imageFileName = #{imageFileName,jdbcType=VARCHAR}
-        where
-            commonId = #{commonId}
+            content = #{content},
+            boardDate = sysdate(),
+            imageFileName = #{imageFileName,jdbcType=VARCHAR}
+        where commonId = #{commonId}
             	]]>
 	</update>
 
