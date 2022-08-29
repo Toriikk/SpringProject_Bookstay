@@ -87,6 +87,7 @@
 					<div class="mainmenu pull-left">
 						<ul class="nav navbar-nav collapse navbar-collapse">
 							<li><a href="<c:url value="/"/>" class="active"><i class="fa fa-home"></i>Home</a></li>
+							<li class="dropdown"><a href="<c:url value="/notice/listnotices"/>"><i class="fa fa-bullhorn"></i>공지사항</a></li> <!-- 공지사항 추가 -->
 							<li class="dropdown"><a href="<c:url value="/productAll"/>"><i class="fa fa-book"></i>Books<!-- <i class="fa fa-angle-down"></i> --></a>
 							<li class="dropdown"><a href="<c:url value="/board/listboards"/>"><i class="fa fa-question"></i>Q&A<!-- <i class="fa fa-angle-down"></i> --></a>
 							<li class="dropdown"><a href="<c:url value="/common/listcommons"/>"><i class="fa fa-comment-o"></i>커뮤니티</a> <!-- 커뮤니티 추가 -->
