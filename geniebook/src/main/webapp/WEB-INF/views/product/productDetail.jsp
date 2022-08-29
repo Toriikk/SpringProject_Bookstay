@@ -233,7 +233,8 @@ function deleteReview(){
 						</c:choose> 
 						<br>
 							<span> <span>${product.price}원</span> <label>수량:</label>
-							<input type="text" value="1" id="quantity"/>
+							<!-- <input type="text" value="1" id="quantity"/> -->
+							<input type="number" value="1" name="stock" id="quantity"> <!-- 카운터기능구현 -->
 							<c:if test="${pageContext.request.userPrincipal.name != 'admin'&& stock>0}">
 							<button type="button" class="btn btn-fefault cart" onclick="go_to_cart()">
 								<i class="fa fa-shopping-cart"></i> 장바구니
