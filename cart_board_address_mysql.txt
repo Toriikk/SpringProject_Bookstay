@@ -21,7 +21,7 @@ create table g_board(
 )engine=InnoDB auto_increment=1 default charset=utf8mb4;
 
 
-drop table g_board;
+-- drop table g_board;
 -- DATE_FORMAT('now()',''%y/%m/%d'')
 
 Insert into g_board(boardId, memberId, title, boardDate, content, originNo, groupOrd, groupLayer)
@@ -40,26 +40,6 @@ values ((select *from (select max(boardId)+1 from g_board) next), "hhh" , "4", s
 select * from g_board;
 
 
-Insert into g_board(boardId, memberId, title, boardDate, content, originNo, groupOrd, groupLayer) values (seq_g_board_boardId.nextval, 'cnh0214', '2', now(), '책 배송이 너무 늦어요',seq_g_board_boardId.nextval, 0,0);
--- SQLINES LICENSE FOR EVALUATION USE ONLY
-Insert into g_board(boardId, memberId, title, boardDate, content, originNo, groupOrd, groupLayer) values (seq_g_board_boardId.nextval, 'cnh0214', '3', now(), '책 배송이 너무 늦어요',seq_g_board_boardId.nextval, 0,0);
--- SQLINES LICENSE FOR EVALUATION USE ONLY
-Insert into g_board(boardId, memberId, title, boardDate, content, originNo, groupOrd, groupLayer) values (seq_g_board_boardId.nextval, 'cnh0214', '4', now(), '책 배송이 너무 늦어요',seq_g_board_boardId.nextval, 0,0);
--- SQLINES LICENSE FOR EVALUATION USE ONLY
-Insert into g_board(boardId, memberId, title, boardDate, content, originNo, groupOrd, groupLayer) values (seq_g_board_boardId.nextval, 'cnh0214', '5', now(), '책 배송이 너무 늦어요',seq_g_board_boardId.nextval, 0,0);
--- SQLINES LICENSE FOR EVALUATION USE ONLY
-Insert into g_board(boardId, memberId, title, boardDate, content, originNo, groupOrd, groupLayer) values (seq_g_board_boardId.nextval, 'cnh0214', '6', now(), '책 배송이 너무 늦어요',seq_g_board_boardId.nextval, 0,0);
--- SQLINES LICENSE FOR EVALUATION USE ONLY
-Insert into g_board(boardId, memberId, title, boardDate, content, originNo, groupOrd, groupLayer) values (seq_g_board_boardId.nextval, 'cnh0214', '7', now(), '책 배송이 너무 늦어요',seq_g_board_boardId.nextval, 0,0);
--- SQLINES LICENSE FOR EVALUATION USE ONLY
-Insert into g_board(boardId, memberId, title, boardDate, content, originNo, groupOrd, groupLayer) values (seq_g_board_boardId.nextval, 'cnh0214', '8', now(), '책 배송이 너무 늦어요',seq_g_board_boardId.nextval, 0,0);
--- SQLINES LICENSE FOR EVALUATION USE ONLY
-Insert into g_board(boardId, memberId, title, boardDate, content, originNo, groupOrd, groupLayer) values (seq_g_board_boardId.nextval, 'cnh0214', '9', now(), '책 배송이 너무 늦어요',seq_g_board_boardId.nextval, 0,0);
--- SQLINES LICENSE FOR EVALUATION USE ONLY
-Insert into g_board(boardId, memberId, title, boardDate, content, originNo, groupOrd, groupLayer) values (seq_g_board_boardId.nextval, 'cnh0214', '10', now(), '책 배송이 너무 늦어요',seq_g_board_boardId.nextval, 0,0);
--- SQLINES LICENSE FOR EVALUATION USE ONLY
-Insert into g_board(boardId, memberId, title, boardDate, content, originNo, groupOrd, groupLayer) values (seq_g_board_boardId.nextval, 'cnh0214', '책 배송이 너무 늦어요', now(), '책 배송이 너무 늦어요',seq_g_board_boardId.nextval, 0,0);
-
 
 
 
@@ -69,7 +49,7 @@ create table cart(
 );
 
 
-drop table g_board;
+# drop table g_board;
 
 
 
