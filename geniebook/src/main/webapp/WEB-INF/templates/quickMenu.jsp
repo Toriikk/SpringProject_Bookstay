@@ -31,13 +31,13 @@
  * 페이지 숫자를 나타내는 cur_product_num의 텍스트를 1로 늘림
  */
 
- function fn_show_previous_product(){
+ function fn_show_previous_product(){ // 이전 버튼 눌렀을 때 이전에 봤던 상품 보여준다
 	var img_sticky=document.getElementById("img_sticky");
-	var cur_product_num=document.getElementById("cur_product_num");
+	var cur_product_num=document.getElementById("cur_product_num"); // 퀵메뉴 페이지 넘버
 	var _h_bookNo=document.frm_sticky.h_bookNo;
 	var _h_product_fileName=document.frm_sticky.h_product_fileName;
 	
-	if(array_index >0)
+	if(array_index >0) // 페이지가 넘어가야하므로 마이너스
 		array_index--;
 	
 	var bookNo=_h_bookNo[array_index].value;
@@ -46,18 +46,18 @@
 	cur_product_num.innerHTML=array_index+1;  /* -1 같은데 확인필요 */
 }
 
-function productDetail(){
+function productDetail(){ // 클릭 시 책 상세 페이지로 넘어감
 	var cur_product_num=document.getElementById("cur_product_num");
 	arrIdx=cur_product_num.innerHTML-1;
 	
 	var img_sticky=document.getElementById("img_sticky");
-	var h_bookNo=document.frm_sticky.h_bookNo;
-	var len=h_bookNo.length;
+	var h_bookNo=document.frm_sticky.h_bookNo; // form name=frm_sticky 안의 h_bookNo, 즉 
+	var len=h_bookNo.length; // 가져온 bookNo의 길이
 	
 	if(len>1){
-		bookNo=h_bookNo[arrIdx].value;
+		bookNo=h_bookNo[arrIdx].value; // 개수가 1개 초과하면 배열로 정리 
 	}else{
-		bookNo=h_bookNo.value;
+		bookNo=h_bookNo.value; // 아니라면 1개 등장
 	}
 	
 	
@@ -78,13 +78,14 @@ function productDetail(){
 </script>  
  
 <body>
-	 
+	 <!-- 장바구니,큐앤에이, 마이페이지 바로가기 -->
     <div id="sticky"  >
 	<ul>
 		<li ><a href="${contextPath }/board/listboards">
 		   <img	width="24" height="24" src="${contextPath}/resources/images/home/free-icon-qa-6369389.png">
 				Q&A
 		</a></li>
+		<c:if test="${pageContext.request.userPrincipal.name != null  }">
 		<li><a href="${contextPath }/memberInfo_ui">
 		   <img width="24" height="24" src="${contextPath}/resources/images/home/account.png">
 				myPage
@@ -93,11 +94,14 @@ function productDetail(){
 		   <img	width="24" height="24" src="${contextPath}/resources/images/home/shopping-cart.png">
 				Cart
 		 </a></li>
+		</c:if>
 	</ul>
+	<!-- 바로가기 끝 -->
 	<div class="recent">
 		<h3>최근 본 상품</h3>
 		  <ul>
 		<!--   상품이 없습니다. -->
+		<!-- choose 안에 when if 문처럼 사용 -->
 		 <c:choose>
 			<c:when test="${ empty quickProductList }">
 				     <strong>상품이 없습니다.</strong>
@@ -106,10 +110,10 @@ function productDetail(){
 	       <form name="frm_sticky">	        
 		      <c:forEach var="item" items="${quickProductList }" varStatus="itemNum">
 		         <c:choose>
-		           <c:when test="${itemNum.count==1 }">
+		           <c:when test="${itemNum.count==1 }"> <!-- 최근 본 상품이 1개라도 있으면 썸네일 뜬다 -->
 			      <a href="javascript:productDetail();">
 			  	         <img width="75" height="95" id="img_sticky"  
-			                 src="${contextPath}/thumbnails?bookNo=${item.bookNo}&imageFileName=${item.imageFileName}">
+			                 src="${contextPath}/thumbnails?bookNo=${item.bookNo}&imageFileName=${item.imageFileName}"> <!--  이미지 썸네일  -->
 			      </a>
 			        <input type="hidden"  name="h_bookNo" value="${item.bookNo}" />
 			        <input type="hidden" name="h_product_fileName" value="${item.imageFileName}" />
@@ -132,7 +136,8 @@ function productDetail(){
 		    <h5>  &nbsp; &nbsp;  0/0  &nbsp; </h5>
 	    </c:when>
 	    <c:otherwise>
-           <h5><a  href='javascript:fn_show_previous_product();'> 이전 </a> &nbsp;  <span id="cur_product_num">1</span>/${quickProductListNum}  &nbsp; <a href='javascript:fn_show_next_product();'> 다음 </a> </h5>
+           <h5><a  href='javascript:fn_show_previous_product();'> 이전 </a> &nbsp;  <span id="cur_product_num">1</span>/${quickProductListNum} 
+            &nbsp; <a href='javascript:fn_show_next_product();'> 다음 </a> </h5>
        </c:otherwise>
        </c:choose>
     </div>

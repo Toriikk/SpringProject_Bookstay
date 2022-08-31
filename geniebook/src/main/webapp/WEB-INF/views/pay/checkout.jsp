@@ -112,7 +112,7 @@
 
 				<table
 					style="width: 100%; padding: 5px 0 5px 0; float: none; margin: 0 auto;">
-					<tr height="2" bgcolor="#428bca">
+					<tr height="2" bgcolor="#ca5d42">
 						<td colspan="2"></td>
 					</tr>
 					<script>
@@ -227,7 +227,7 @@
 									name="addr_detail" id="addr_detail" type="text"
 									value="${addrVO.addr_detail }" />
 							</div></td>
-					<tr height="2" bgcolor="#428bca">
+					<tr height="2" bgcolor="#ca5d42">
 						<td colspan="2"></td>
 					</tr>
 					<script>
@@ -299,7 +299,7 @@
 						<th><br> <input type="hidden"
 							name="${_csrf.parameterName}" value="${_csrf.token}" /></th>
 					</tr>
-					<tr height="2" bgcolor="#428bca">
+					<tr height="2" bgcolor="#ca5d42">
 						<td colspan="2"></td>
 
 					</tr>
@@ -407,7 +407,7 @@
 				<tr align="center">
 					<td align="center"><input type="submit"
 						onclick="return checkPattern();" value="결제하기"
-						style="background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
+						style="background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
 					</td>
 				</tr>
 			</table>

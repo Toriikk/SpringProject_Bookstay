@@ -81,7 +81,7 @@ public class BoardController {
 		model.addAttribute("originNo",request.getParameter("originNo"));
 		model.addAttribute("groupOrd",request.getParameter("groupOrd"));
 		model.addAttribute("groupLayer",request.getParameter("groupLayer"));
-		return "replyForm";
+		return "replyForm_board";
 	}
 
 	@RequestMapping(value = "/board/addBoard")

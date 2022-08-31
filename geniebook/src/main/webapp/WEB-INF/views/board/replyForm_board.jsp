@@ -9,7 +9,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>커뮤니티 댓글 창</title>
+<title>글쓰기창</title>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
 	 function readURL(input) {
@@ -22,7 +22,7 @@
 	   }
 	}   
 	function backToList(obj) {
-		obj.action = "${contextPath}/common/listcommons?${_csrf.parameterName}=${_csrf.token}";
+		obj.action = "${contextPath}/board/listboards?${_csrf.parameterName}=${_csrf.token}";
 		obj.submit();
 	}
 
@@ -33,17 +33,17 @@
 	}
 	
 </script>
-<title>커뮤니티 댓글 창</title>
+<title>글쓰기창</title>
 </head>
 <body>
 
 <%-- <th><br> <input type="hidden"
 						name="${_csrf.parameterName}" value="${_csrf.token}" /></th>
 				</tr> --%>
-	<h1 style="text-align: center">커뮤니티 답글 쓰기</h1>
+	<h1 style="text-align: center">Q&A 답글 쓰기</h1>
 	<div class="container">
 		<form name="replyForm" method="post"
-			action="${contextPath}/common/replyCommon?${_csrf.parameterName}=${_csrf.token}&originNo=${originNo}&groupOrd=${groupOrd}&groupLayer=${groupLayer}" enctype="multipart/form-data">
+			action="${contextPath}/board/replyBoard?${_csrf.parameterName}=${_csrf.token}&originNo=${originNo}&groupOrd=${groupOrd}&groupLayer=${groupLayer}" enctype="multipart/form-data">
 			<!-- " -->
 			<table class="table" border="0" align="center">
 				<tr>
@@ -89,9 +89,9 @@
 				<tr>
 					<td align="right"></td>
 					<td colspan="2"><input type="submit" value="글쓰기" 
-					style="background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;"/> <input
+					style="background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;"/> <input
 						type=button value="목록보기" onClick="backToList(this.form)" 
-						style="background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;"/></td>
+						style="background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;"/></td>
 				</tr>
 			</table>
 		</form>

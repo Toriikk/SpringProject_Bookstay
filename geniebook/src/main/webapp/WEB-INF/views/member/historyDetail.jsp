@@ -27,7 +27,7 @@
 
 				<table
 					style="width: 100%; padding: 5px 0 5px 0; float: none; margin: 0 auto;">
-					<tr height="2" bgcolor="#428bca">
+					<tr height="2" bgcolor="#ca5d42">
 						<td colspan="2"></td>
 					</tr>
 					<tr>
@@ -78,7 +78,7 @@
 									name="addr_detail" id="addr_detail" type="text"
 									value="${history.addr_detail }" readonly="readonly" />
 							</div></td>
-					<tr height="2" bgcolor="#428bca">
+					<tr height="2" bgcolor="#ca5d42">
 						<td colspan="2"></td>
 					</tr>
 	
@@ -103,7 +103,7 @@
 						<th><br> <input type="hidden"
 							name="${_csrf.parameterName}" value="${_csrf.token}" /></th>
 					</tr>
-					<tr height="2" bgcolor="#428bca">
+					<tr height="2" bgcolor="#ca5d42">
 						<td colspan="2"></td>
 
 					</tr>
@@ -186,7 +186,7 @@
 				<tr style="margin:0 auto; align:center;">
 				<td align="center">
 					<button type="button"
-						onclick="history.go(-1);" style="background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
+						onclick="history.go(-1);" style="background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
 						뒤로</button>
 				<td>
 				</tr>

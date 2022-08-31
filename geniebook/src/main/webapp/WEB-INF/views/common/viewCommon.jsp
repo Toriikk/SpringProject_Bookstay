@@ -138,23 +138,23 @@
 							<td colspan="2">
 								<c:if test="${id eq commonVO.memberId }">
 									<input type=submit value="수정반영하기" id="submit"
-									style="display: none; background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;"><br>
+									style="display: none; background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;"><br>
 									<input type=button value="수정하기" onClick="fn_enable(this.form)"
 									id="mod_btn"
-									style="background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
+									style="background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
 								</c:if>
 								<c:if test="${id eq commonVO.memberId || id eq 'admin' }">
 									<input type=button value="삭제하기"
 									onClick="location.href='${contextPath}/common/deleteCommon?originNo=${commonVO.originNo }&groupOrd=${commonVO.groupOrd }&groupLayer=${commonVO.groupLayer }'"
-									style="background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
+									style="background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
 								</c:if>
 								<input type=button value="목록보기"
 								onClick="location.href='${contextPath}/common/listcommons'"
-								style="background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
+								style="background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
 								<c:if test="${id ne 'anonymousUser' }">
 									<input type=button value="답글쓰기"
 									onClick="fn_reply_form('${contextPath}/common/replyForm?${_csrf.parameterName}=${_csrf.token}&originNo=${commonVO.originNo}&groupOrd=${commonVO.groupOrd}&groupLayer=${commonVO.groupLayer }', ${commonVO.commonId})"
-									style="background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
+									style="background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
 								</c:if>
 							</td>
 								

@@ -82,7 +82,7 @@ public class CommonController {
 		model.addAttribute("originNo",request.getParameter("originNo"));
 		model.addAttribute("groupOrd",request.getParameter("groupOrd"));
 		model.addAttribute("groupLayer",request.getParameter("groupLayer"));
-		return "replyForm";
+		return "replyForm_common";
 	}
 
 	@RequestMapping(value = "/common/addCommon")

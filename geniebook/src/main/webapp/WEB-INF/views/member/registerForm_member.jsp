@@ -199,7 +199,7 @@
 
 		<form action="<c:url value="/registerMember"/>" method="post">
 			<table width="940" style="padding: 5px 0 5px 0; margin: 0 auto;">
-				<tr height="2" bgcolor="#428bca">
+				<tr height="2" bgcolor="#ca5d42">
 					<td colspan="2"></td>
 				</tr>
 				<script>
@@ -365,7 +365,7 @@
 							<option value="nate.com">nate.com</option>
 					</select> <input type="hidden" name="email" id="email"> <br> <br></td>
 				</tr>
-				<tr height="2" bgcolor="#428bca">
+				<tr height="2" bgcolor="#ca5d42">
 					<td colspan="2">
 				</tr>
 				<tr>
@@ -400,7 +400,7 @@
 							<input class="form-control" placeholder="상세주소" name="addr_detail"
 								id="addr_detail" type="text" value="${addrVO.addr_detail }" />
 						</div></td>
-				<tr height="2" bgcolor="#428bca">
+				<tr height="2" bgcolor="#ca5d42">
 					<td colspan="2"></td>
 				</tr>
 				<script>
@@ -484,7 +484,7 @@
 				</tr>
 
 
-				<tr height="2" bgcolor="#428bca">
+				<tr height="2" bgcolor="#ca5d42">
 					<td colspan="2"></td>
 
 				</tr>
@@ -496,10 +496,10 @@
 
 					<td colspan="2" align="center"><input type="submit"
 						onclick="return checkPattern()" value="회원가입"
-						style="background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
+						style="background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
 
 						<input type="reset" class="btn btn-default" value="다시입력"
-						style="background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;" />
+						style="background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;" />
 				</tr>
 				<tr>
 					<th><br></th>
@@ -508,10 +508,10 @@
 
 		</form>
 		<!-- 		<button type="button" class="btn btn-default" onclick="history.go(-1)"
-			style="background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">뒤로</button>
+			style="background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">뒤로</button>
 		<button type="button" class="btn btn-default"
 			onclick="return checkPattern()"
-			style="background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">asd</button>
+			style="background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">asd</button>
 	</div> -->
 </body>
 </html>

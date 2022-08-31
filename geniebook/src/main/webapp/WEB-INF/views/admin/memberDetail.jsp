@@ -29,7 +29,7 @@
 		</tr>
 		<tr>
 			<th>구매 내역</th><td> 
-							<button type="button" onclick="location.href='<c:url value='/purchaseHistory/${memberVO.id}'/>';" style="background: #428bca;
+							<button type="button" onclick="location.href='<c:url value='/purchaseHistory/${memberVO.id}'/>';" style="background: #ca5d42;
 						 border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">보기</button>
 					</td>
 		</tr>
@@ -41,11 +41,11 @@
 			<td>
 				<c:choose>
 					<c:when test="${memberVO.receive_email eq 1}">
-						<button type="button" id = mailSending onclick="location.href='mailSending/${memberVO.id }'" style="background: #428bca;
+						<button type="button" id = mailSending onclick="location.href='mailSending/${memberVO.id }'" style="background: #ca5d42;
 							 border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">전송</button>
 					</c:when>
 					<c:otherwise>
-						<button type="button" style="background: #428bca; border: medium none; border-radius: 0;
+						<button type="button" style="background: #ca5d42; border: medium none; border-radius: 0;
 						 color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;" disabled="disabled">전송</button> 메일 수신을 거부한 사용자
 					</c:otherwise>
 				</c:choose>
@@ -53,7 +53,7 @@
 		</tr>
 		<tr>
 			<th>문의내역</th>
-			<td><button type="button" id = memberDetail onclick="location.href='<c:url value='/Q&A/${memberVO.id}'/>';" style="background: #428bca;
+			<td><button type="button" id = memberDetail onclick="location.href='<c:url value='/Q&A/${memberVO.id}'/>';" style="background: #ca5d42;
 						 border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">보기</button>
 			</td>
 		</tr>

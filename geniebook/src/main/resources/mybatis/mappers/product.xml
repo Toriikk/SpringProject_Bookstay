@@ -29,7 +29,7 @@
 
    <delete id="deleteProduct" parameterType="int">
       <![CDATA[
-         delete product where bookNo = #{bookNo}
+         delete from product where bookNo = #{bookNo}
       ]]>
    </delete>
 
@@ -41,7 +41,7 @@
    </update>
 
 
-   <!-- Ramdom 상품 선택 -->
+   <!-- Random 상품 선택 -->
    <select id="selectBookListByRecommendation"
       resultMap="productResult">
       <![CDATA[ 
@@ -53,7 +53,8 @@
 
    <!-- 상품 전체 선택 -->
    <select id="selectProductListAll" resultMap="productResult">
-            <![CDATA[
+   <!-- bookNo 순으로 상품 전체 조회 -->
+      <![CDATA[
          SELECT * FROM product order by bookNo
       ]]>
    </select>
@@ -89,20 +90,40 @@
       order by price desc
    
    </select>    -->
-   <select id="selectProductByTitle" resultType="productVO"   parameterType="String"  >
+  
+  <!-- 상품  검색 / 사용자 검색 -->
+	<select id="selectProductByTitle" resultType="productVO"   parameterType="String"  >
       <![CDATA[
-            select * from product 
-            where bookname like '%'||#{searchWord}||'%'
-             order by price desc
-      ]]>
-   </select>   
-   <select id="selectProductByWriter" resultType="productVO"   parameterType="String"  >
+				select * from product 
+				where bookname like CONCAT('%', #{searchWord}, '%')
+			    order by price desc
+		]]>
+	</select>	
+	<select id="selectProductByWriter" resultType="productVO"   parameterType="String"  >
       <![CDATA[
-            select * from product 
-            where writer like '%'||#{searchWord}||'%'
-             order by price desc
-      ]]>
-   </select>   
+				select * from product 
+				where writer like CONCAT('%', #{searchWord}, '%')
+			    order by price desc
+		]]>
+	</select>	
+	
+	 <!-- 상품  검색 / 관리자 검색 -->
+	<select id="selectProductByPublisher" resultType="productVO"   parameterType="String"  >
+      <![CDATA[
+				select * from product 
+				where publisher like CONCAT('%', #{searchWord}, '%')
+			    order by price desc
+		]]>
+	</select>	
+	
+	<select id="selectProductByCategory" resultType="productVO"   parameterType="String"  >
+      <![CDATA[
+				select * from product 
+				where category like CONCAT('%', #{searchWord}, '%')
+			    order by price desc
+		]]>
+	</select>	
+     
    <!-- 자동완성 -->
    <select id="selectKeywordSearch" resultType="String"   parameterType="String"  >
        <![CDATA[

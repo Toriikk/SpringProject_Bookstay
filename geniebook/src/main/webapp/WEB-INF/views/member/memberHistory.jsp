@@ -14,7 +14,7 @@
 			style="margin-left: auto; margin-right: auto;">
 
 			<tr
-				style="background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
+				style="background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
 				<th>날짜</th>
 				<th>ID</th>
 				<th>제품명</th>

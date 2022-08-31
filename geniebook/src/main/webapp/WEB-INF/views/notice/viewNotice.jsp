@@ -137,19 +137,19 @@
 							<td colspan="2">
 								<c:if test="${id eq noticeVO.adminId }">
 									<input type=submit value="수정반영하기" id="submit"
-									style="display: none; background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;"><br>
+									style="display: none; background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;"><br>
 									<input type=button value="수정하기" onClick="fn_enable(this.form)"
 									id="mod_btn"
-									style="background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
+									style="background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
 								</c:if>
 								<c:if test="${id eq noticeVO.adminId || id eq 'admin' }">
 									<input type=button value="삭제하기"
-									onClick="location.href='${contextPath}/notice/deleteNotice?originNo=${noticeVO.originNo }"
-									style="background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
+									onClick="location.href='${contextPath}/notice/deleteNotice?originNo=${noticeVO.originNo }'"
+									style="background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
 								</c:if>
 								<input type=button value="목록보기"
 								onClick="location.href='${contextPath}/notice/listnotices'"
-								style="background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
+								style="background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
 								
 							</td>
 								

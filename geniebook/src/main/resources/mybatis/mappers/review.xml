@@ -23,8 +23,7 @@
 		<![CDATA[
 		insert into review(
 			reviewId, memberId, reviewDate, content, bookNo, rating)
-			values(
-			(select * from ((select max(reviewId) +1 from review) next), #{memberId}, sysdate, #{content}, #{bookNo}, #{rating})
+			values((select * from (select max(reviewId) +1 from review) next), #{memberId}, sysdate(), #{content}, #{bookNo}, #{rating})
 		  ]]>
 	</insert>
 	
@@ -34,7 +33,7 @@
 		update review
 		set
 			content = #{content},
-			reviewDate = sysdate
+			reviewDate = sysdate()
 		where reviewId = #{reviewId}
 		  ]]>
 	</update>
@@ -45,6 +44,7 @@
 		where reviewId = #{reviewId}
 		  ]]>
 	</delete>
+	
 	<!-- 책번호로 평균 평점 조회 (평점이 널이면 0) -->
 	<select id="selectRatingBybookNo" resultType="float" parameterType="integer">
 	 <![CDATA[
