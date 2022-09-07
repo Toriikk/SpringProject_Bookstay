@@ -23,18 +23,17 @@
 		<![CDATA[
 		insert into review(
 			reviewId, memberId, reviewDate, content, bookNo, rating)
-			values(
-			seq_review_reviewId.nextval, #{memberId}, sysdate, #{content}, #{bookNo}, #{rating})
+			values((select * from (select max(reviewId) +1 from review) next), #{memberId}, sysdate(), #{content}, #{bookNo}, #{rating})
 		  ]]>
 	</insert>
-
+	
 	
 	<update id="updateReview" parameterType="reviewVO">
 		<![CDATA[
 		update review
 		set
 			content = #{content},
-			reviewDate = sysdate
+			reviewDate = sysdate()
 		where reviewId = #{reviewId}
 		  ]]>
 	</update>

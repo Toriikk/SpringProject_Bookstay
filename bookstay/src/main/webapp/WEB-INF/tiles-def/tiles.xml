@@ -46,6 +46,17 @@
 		<put-attribute name="side"
 			value="/WEB-INF/templates/side.jsp" />
 	</definition>
+	<!-- login, Join, 회원 정보 관리 등등 -->
+	<definition name="base4"
+		template="/WEB-INF/templates/layout.jsp">
+		<put-attribute name="title" value="bookstay" />
+		<put-attribute name="header"
+			value="/WEB-INF/templates/header3.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/templates/footer.jsp" />
+		<put-attribute name="side"
+			value="/WEB-INF/templates/side.jsp" />
+	</definition>
 
 
 	<!--************************************ home ************************************ -->
@@ -155,55 +166,55 @@
 
 	<!--************************************ Member ************************************ -->
 
-	<definition name="login" extends="base">
+	<definition name="login" extends="base4">
 		<put-attribute name="title" value="로그인" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/member/login.jsp" />
 	</definition>
 
-	<definition name="registerForm_member" extends="base">
+	<definition name="registerForm_member" extends="base4">
 		<put-attribute name="title" value="회원 가입" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/member/registerForm_member.jsp" />
 	</definition>
 
-	<definition name="memberInfo_ui" extends="base">
+	<definition name="memberInfo_ui" extends="base4">
 		<put-attribute name="title" value="회원 정보" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/member/memberInfo_ui.jsp" />
 	</definition>
 
-	<definition name="memberHistory" extends="base">
+	<definition name="memberHistory" extends="base4">
 		<put-attribute name="title" value="회원 정보" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/member/memberHistory.jsp" />
 	</definition>
 
 	<!-- 김현정/어드민 -->
-	<definition name="adminInfo" extends="base">
+	<definition name="adminInfo" extends="base4">
 		<put-attribute name="title" value="회원 정보" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/member/adminInfo.jsp" />
 	</definition>
 
-	<definition name="updateForm_member" extends="base">
+	<definition name="updateForm_member" extends="base4">
 		<put-attribute name="title" value="개인 정보 변경" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/member/updateForm_member.jsp" />
 	</definition>
 
-	<definition name="pwdCheck" extends="base">
+	<definition name="pwdCheck" extends="base4">
 		<put-attribute name="title" value="개인 정보 변경" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/member/pwdCheck.jsp" />
 	</definition>
 
-	<definition name="pwdCheck_delete" extends="base">
+	<definition name="pwdCheck_delete" extends="base4">
 		<put-attribute name="title" value="회원 탈퇴" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/member/pwdCheck_delete.jsp" />
 	</definition>
-	<definition name="historyDetail" extends="base">
+	<definition name="historyDetail" extends="base4">
 		<put-attribute name="title" value="상세 거래 내역" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/member/historyDetail.jsp" />
@@ -211,7 +222,7 @@
 
 	<!--************************************ Checkout ************************************ -->
 
-	<definition name="checkout" extends="base">
+	<definition name="checkout" extends="base4">
 		<put-attribute name="title" value="결제" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/pay/checkout.jsp" />
@@ -257,51 +268,51 @@
 
 	<!--************************************ Manager ************************************ -->
 
-	<definition name="adminManager" extends="base3">
+	<definition name="adminManager" extends="base4">
 		<put-attribute name="title" value="관리자" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/admin/adminManager.jsp" />
 	</definition>
 
-	<definition name="member_search" extends="base3">
+	<definition name="member_search" extends="base4">
 		<put-attribute name="title" value="관리자" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/admin/adminManager.jsp" />
 	</definition>
 
-	<definition name="memberDetail" extends="base3">
+	<definition name="memberDetail" extends="base4">
 		<put-attribute name="title" value="관리자" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/admin/memberDetail.jsp" />
 	</definition>
 
 	<!-- 상품 관리 -->
-	<definition name="addProductForm" extends="base3">
+	<definition name="addProductForm" extends="base4">
 		<put-attribute name="title" value="상품 추가" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/admin/addProductForm.jsp" />
 	</definition>
 
-	<definition name="updateProductForm" extends="base3">
+	<definition name="updateProductForm" extends="base4">
 		<put-attribute name="title" value="상품 수정" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/admin/updateProductForm.jsp" />
 	</definition>
 
-	<definition name="productDetail_admin" extends="base3">
+	<definition name="productDetail_admin" extends="base4">
 		<put-attribute name="title" value="상품 상세 페이지" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/admin/productDetail.jsp" />
 	</definition>
 
 	<!-- 메일 -->
-	<definition name="mailSending" extends="base3">
+	<definition name="mailSending" extends="base4">
 		<put-attribute name="title" value="메일 보내기" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/admin/mailSending.jsp" />
 	</definition>
 
-	<definition name="mailSending_all" extends="base3">
+	<definition name="mailSending_all" extends="base4">
 		<put-attribute name="title" value="메일 보내기" />
 		<put-attribute name="body"
 			value="/WEB-INF/views/admin/mailSending_all.jsp" />

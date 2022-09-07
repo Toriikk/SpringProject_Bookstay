@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+/Users/gimjaehui/Desktop/git/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+630838965.index
+3000278947.index
+2440200787.index
+9769613.index
+3538356721.index
+2605151918.index
+935822194.index

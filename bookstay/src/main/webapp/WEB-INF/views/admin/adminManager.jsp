@@ -12,7 +12,7 @@ table {
 
 button {
 	border-radius: 10px;
-	background: #428bca;
+	background: #ca5d42;
 	border: medium none;
 	border-radius: 4;
 	color: #FFFFFF;
@@ -95,7 +95,7 @@ button {
                      style="margin-left: auto; margin-right: auto;">
 
                      <tr
-                        style="background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
+                        style="background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
                         <th>ID</th>
                         <th>이름</th>
                         <th>총 누적 금액</th>
@@ -168,7 +168,7 @@ button {
                      style="margin-left: auto; margin-right: auto;">
 
                      <tr
-                        style="background: #428bca; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
+                        style="background: #ca5d42; border: medium none; border-radius: 0; color: #FFFFFF; font-family: 'Roboto', sans-serif; padding: 6px 25px;">
                         <th>ID</th>
                         <th>카테고리</th>
                         <th>책 이름</th>
@@ -177,7 +177,7 @@ button {
                         <th>가격</th>
                         <th><!-- <i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i> -->재고</th>
                         <th colspan="2"><button type="button"
-                              style="float=right; background: white; border: medium none; border-radius: 0; color: #428bca; font-family: 'Roboto', sans-serif; padding: 4px 15px; border-radius: 10px;"
+                              style="float=right; background: white; border: medium none; border-radius: 0; color: #ca5d42; font-family: 'Roboto', sans-serif; padding: 4px 15px; border-radius: 10px;"
                               id="addProduct" onclick="location.href='addProductForm'" >
                               <b>상품 추가</b>
                            </button></th>
