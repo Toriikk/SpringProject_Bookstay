@@ -36,15 +36,15 @@
 
 	<select id="isCartItemByBookNo" parameterType="map"
 		resultType="String">
-		select decode(count(*),1, 'true', 0, 'false')
-		from cartItem
-		where cartId = #{cartId} and bookNo=#{bookNo}
+		select case count(*) when 1 then 'true' when 0 then 'false' end
+			from cartItem
+			where cartId = #{cartId} and bookNo=#{bookNo}
 	</select>
 
 	<insert id="addCartItem" parameterType="cartItemVO">
   <![CDATA[
     	insert into cartItem(id, quantity, totalPrice, cartId, bookNo)
-    					values(seq_cartItemId.nextval, #{quantity}, #{totalPrice}, #{cartId}, #{bookNo})
+    					values((select * from (select max(id) +1 from cartItem) next), #{quantity}, #{totalPrice}, #{cartId}, #{bookNo})
                                   
    ]]>
 	</insert>

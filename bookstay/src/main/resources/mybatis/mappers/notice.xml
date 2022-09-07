@@ -22,19 +22,19 @@
 
 	<select id="selectAllNoticeList" resultMap="noticesResult">
     <![CDATA[
-     SELECT rnum, T.*
-   FROM ( SELECT noticeId, adminId, boardDate, title, content, viewCnt, imageFileName, ROW_NUMBER() OVER(ORDER BY originNo desc) as rnum
+     SELECT 'rnum', T.*
+   FROM ( SELECT noticeId, adminId, boardDate, title, content, viewCnt, imageFileName, ROW_NUMBER() OVER(ORDER BY originNo desc) as 'rnum'
                    FROM notice) T
-  WHERE rnum BETWEEN #{startList} AND #{endList}
+  WHERE 'rnum' BETWEEN #{startList} AND #{endList}
     ]]>
 	</select>
 	
 	<select id="selectAllNoticeListById" resultMap="noticesResult" parameterType="map">
     <![CDATA[
-     SELECT rnum, T.*
-   FROM ( SELECT noticeId, adminId, boardDate, title, content, viewCnt, imageFileName, ROW_NUMBER() OVER(ORDER BY originNo desc) as rnum
+     SELECT 'rnum', T.*
+   FROM ( SELECT noticeId, adminId, boardDate, title, content, viewCnt, imageFileName, ROW_NUMBER() OVER(ORDER BY originNo desc) as 'rnum'
                    FROM notice) T
-  WHERE adminId = #{id} and rnum BETWEEN #{pagination.startList} AND #{pagination.endList}
+  WHERE adminId = #{id} and 'rnum' BETWEEN #{pagination.startList} AND #{pagination.endList}
     ]]>
 	</select>
 
@@ -43,7 +43,7 @@
 	<insert id="addNotice" parameterType="noticeVO">
 	<![CDATA[
 			insert into notice(noticeId,  adminId, title, content, imageFileName, originNo)
-			values(seq_notice_noticeId.nextval, #{adminId}, #{title}, #{content}, #{imageFileName,jdbcType=VARCHAR}, seq_notice_noticeId.nextval)
+			values((select * from (select max(noticeId) +1 from notice) next), #{adminId}, #{title}, #{content}, #{imageFileName,jdbcType=VARCHAR}, (select * from (select max(noticeId) +1 from notice) next))
 			]]>
 	</insert>
 
@@ -51,11 +51,10 @@
 	<update id="updateNotice" parameterType="noticeVO">
 	<![CDATA[
 		update notice set
-            content = #{content}
-            , boardDate = sysdate
-            , imageFileName = #{imageFileName,jdbcType=VARCHAR}
-        where
-            noticeId = #{noticeId}
+            content = #{content},
+            boardDate = sysdate(),
+            imageFileName = #{imageFileName,jdbcType=VARCHAR}
+        where noticeId = #{noticeId}
             	]]>
 	</update>
 
@@ -82,7 +81,8 @@
 
 	<update id="increaseViewCnt" parameterType="String">
 	<![CDATA[
-		update notice set viewCnt = viewCnt + 1
+		update notice set 
+		viewCnt = viewCnt + 1
 		where noticeId = #{noticeId}
 		]]>
 	</update>
